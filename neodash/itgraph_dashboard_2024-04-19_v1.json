@@ -2,21 +2,21 @@
   "title": "IT-Services-Dashboards",
   "version": "2.4",
   "settings": {
-    "pagenumber": 3,
+    "pagenumber": 0,
     "editable": true,
     "fullscreenEnabled": false,
     "parameters": {
       "neodash_customerName": "Julee Coppledike",
-      "neodash_servername": "server-87",
-      "neodash_impService": "Service-661-zw",
+      "neodash_servername": "server-4",
+      "neodash_impService": "Service-228-vr",
       "neodash_": "Flowdesk",
-      "neodash_swname": "Tres-Zap",
-      "neodash_service_servicename": "Service-214-el",
-      "neodash_service_servicename_display": "Service-801-ur",
-      "neodash_customer_customername": "Willem Orman",
-      "neodash_customer_customername_display": "Willem Orman",
-      "neodash_software_swname": "Duobam",
-      "neodash_software_swname_display": "Duobam"
+      "neodash_swname": "Alphazap",
+      "neodash_service_servicename": "Service-031-kb",
+      "neodash_service_servicename_display": "Service-725-ah",
+      "neodash_customer_customername": "Tommie Musto",
+      "neodash_customer_customername_display": "Tommie Musto",
+      "neodash_software_swname": "Tin",
+      "neodash_software_swname_display": "Tin"
     },
     "theme": "light"
   },
@@ -27,7 +27,7 @@
         {
           "id": "ce76c06b-72a3-4d4f-97d3-a9a841ddc818",
           "title": "Explanation of the Demo",
-          "query": "![](https://github.com/neo4j-field/itservicegraph/raw/main/graphics/explanation.png)",
+          "query": "![](https://github.com/neo4j-field/itservicegraph/raw/main/graphics/explanation.png)\n**[GitRepo Link](https://github.com/neo4j-field/itservicegraph)**",
           "width": 22,
           "height": 10,
           "x": 0,
@@ -55,7 +55,7 @@
           "title": "Data Model with Properties",
           "query": "![Data Model](https://github.com/neo4j-field/itservicegraph/raw/main/graphics/dm_w_properties.png)\n\n\n",
           "width": 22,
-          "height": 12,
+          "height": 13,
           "x": 0,
           "y": 22,
           "type": "text",
@@ -218,8 +218,7 @@
           "y": 0,
           "type": "map",
           "selection": {
-            "Datacenter": "dcCity",
-            "HAS_WAN_CONNECTION": "(label)"
+            "Datacenter": "dcCity"
           },
           "settings": {
             "refreshButtonEnabled": true,
@@ -1031,7 +1030,7 @@
         {
           "id": "63e7f93e-3aa4-4c11-8552-1bfc8c887f4e",
           "title": "Please ask your questions:",
-          "query": "MATCH (sv:Service)-[:CONSUMED_BY]->(cu:Customer) WHERE toLower(sv.serviceName) CONTAINS 'service-570-rl'\nRETURN cu.customerName AS CustomerName, cu.customerDept AS DepartmentName, sv.serviceSLA AS BookedSLA, sv.serviceName AS ServiceName",
+          "query": "MATCH (sv:Service)-[:CONSUMED_BY]->(cu:Customer) WHERE toLower(sv.serviceName) CONTAINS 'service-570-rl'\nRETURN cu.customerName AS CustomerName, cu.customerDept AS DepartmentName, sv.serviceSLA AS BookedSLA, sv.serviceName AS ServiceName ",
           "width": 22,
           "height": 7,
           "x": 0,

@@ -1,5 +1,6 @@
 
 // Load generated IT Service Graph Demo Data
+// To run the following in Neo4j Workspace (AuraDB), remove the remarks and run only the Cypher statements!
 
 :param filename => 'https://raw.githubusercontent.com/neo4j-field/itservicegraph/main/data/rz.csv';
 

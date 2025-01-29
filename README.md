@@ -21,8 +21,8 @@ that e.g. a CMDB alone cannot provide. The following Dashboard pages are availab
 In order to install the demo locally do the following:
 
 1. Create an empty Neo4j database. Use for example [Neo4j Aura](https://console.neo4j.io/), an empty [Neo4j Sandbox](https://sandbox.neo4j.com/) or Neo4j Desktop.
-2. When the database is  up and running, open Neo4j Browser and run first the commands provided in the script ``ìndexes.cypher````
-3. Next load the data and run the commands provided in the script ```load_all_it-service-data.cypher````
+2. When the database is  up and running, open Neo4j Browser and run first the commands provided in the script ```indexes.cypher```
+3. Next load the data and run the commands provided in the script ```load_all_it-service-data.cypher```
 4. Once indexes/contraints are created, go to [NeoDash](https://neodash.graphapp.io/) if you are using AuraDB or a Sandbox and choose New Dashboard. Click "Yes" on the next dialog. In case you use Neo4j Desktop, make sure you installed NeoDash via the AppsGallery before you contiue.  
 5. In the following dialog, enter the hostname (copy that from your AuraDB or Sandbox environments, if you use Neo4j Desktop run NeoDash locally and also choose "New Dashboard". But enter ```localhost``` as the connection string. Then click the ```Connect``` button (all types of Neo4j)
 6. Once connected, click the ```+```icon in the upper right corner and choose ```Import```. In the window that opens, cut and paste the JSON content of the JSON file ```itgraph_dashboard_<last date saved>.json``` and paste it into the window. Scroll down and click the ```Import``` button to finally import the file. 

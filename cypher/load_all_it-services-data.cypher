@@ -43,7 +43,7 @@ RETURN count(*);
 :param filename => 'https://raw.githubusercontent.com/neo4j-field/itservicegraph/main/data/rz-sections-server.csv';
 
 LOAD CSV WITH HEADERS FROM $filename AS line FIELDTERMINATOR ';'
-WITH line.datacenter AS dcName, line.dcSecName AS dcSecName, line.rackAmountUnits AS rackAmountUnits, line.rackAmountFreeUnits AS rackAmountFreeUnits, line.rackManufacturer AS rackManufacturer, line.rackName AS rackName, line.rackRZRow AS rackRZRow
+WITH line.servername AS serverName, line.datacenter AS dcName, line.dcSecName AS dcSecName, line.rackAmountUnits AS rackAmountUnits, line.rackAmountFreeUnits AS rackAmountFreeUnits, line.rackManufacturer AS rackManufacturer, line.rackName AS rackName, line.rackRZRow AS rackRZRow
 MATCH (d:Datacenter {dcName: dcName})
 MERGE (s:Section {dcSecName: dcSecName})
 ON CREATE SET s.dcSecGeo = d.dcGeoLoc
@@ -53,7 +53,7 @@ a.rackAmountFreeUnits = rackAmountFreeUnits,
 a.rackManufacturer = rackManufacturer
 WITH rackName, dcName, dcSecName
 MATCH (a:Rack {rackName: rackName})
-MATCH (d:Datacenter {dcName: dcName})
+MATCH (d:Datacenter {dcName: dcName})<-[:LOCATED_IN]-(:Server {serverName: serverName})
 MATCH (s:Section {dcSecName: dcSecName})
 MERGE (d)-[:IN_SECTION]->(s)
 MERGE (s)-[:IN_RACK]->(a)
